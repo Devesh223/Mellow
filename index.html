@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mellow | Artisanal Bakery & Coffee Roastery</title>
+  <meta name="description" content="Mellow Bakery & Specialty Coffee Roastery. Handcrafted pastries, sourdough breads, 100% Ethiopia Yirgacheffe coffee beans, and custom wax-sealed gift packages.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-content">
+      <span>✨ Freshly Baked Daily at 5:00 AM & Specialty Ethiopia Yirgacheffe Beans</span>
+      <span class="announcement-highlight">🚚 Free Delivery on Orders Over $35 | Use Code <strong>MELLOW10</strong> for 10% Off</span>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a href="#" class="brand-logo-link" title="Mellow Bakery Home">
+        <img src="assets/brand/logo.jpg" alt="Mellow Bakery Logo" class="brand-logo-img">
+        <div class="brand-text-fallback">
+          <span class="brand-name">Mellow</span>
+          <span class="brand-sub">Bakery & Coffee</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="#menu" class="nav-link active">Our Menu</a></li>
+          <li><a href="#coffee" class="nav-link">Specialty Coffee</a></li>
+          <li><a href="#simulator" class="nav-link highlight-link"><span>✨</span> Order Simulator</a></li>
+          <li><a href="#craft" class="nav-link">Our Craft</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#visit" class="nav-link">Visit Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn search-trigger" id="searchBtn" aria-label="Search items">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+
+        <a href="#simulator" class="btn btn-outline btn-sm cta-sim-btn">
+          <span class="pulse-dot"></span> Order Simulator
+        </a>
+
+        <button class="cart-trigger-btn" id="cartBtn" aria-label="Open Cart">
+          <div class="cart-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="cart-badge" id="cartBadgeCount">0</span>
+          </div>
+          <span class="cart-total-price" id="cartHeaderTotal">$0.00</span>
+        </button>
+
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-bg" style="background-image: url('assets/images/hero.jpg');"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-icon">🌿</span> 100% Natural Heirloom • Handcrafted Daily
+          </div>
+          <h1 class="hero-title">Warmth in Every Bite, <br><em>Art in Every Roast.</em></h1>
+          <p class="hero-description">
+            Welcome to <strong>Mellow</strong>. Experience artisanal sourdough, golden flaky croissants, and micro-lot Ethiopian coffees — wrapped in unbleached kraft paper and sealed with our signature wax stamp.
+          </p>
+          <div class="hero-actions">
+            <a href="#simulator" class="btn btn-primary btn-lg">
+              <span>🔥</span> Launch Order Simulator
+            </a>
+            <a href="#menu" class="btn btn-glass btn-lg">
+              Explore Baked Delights
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num">5:00 AM</span>
+              <span class="stat-lbl">Daily Oven Bake</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">100%</span>
+              <span class="stat-lbl">Natural Single-Origin</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">4.9 ★</span>
+              <span class="stat-lbl">1,200+ Happy Guests</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-oven-card" id="heroOvenBadge">
+          <div class="oven-card-header">
+            <span class="oven-pulse"></span>
+            <span class="oven-card-title">Live Oven Status</span>
+          </div>
+          <div class="oven-card-body">
+            <div class="oven-item-icon">🥐</div>
+            <div class="oven-item-info">
+              <h4>Almond Croissants Batch #04</h4>
+              <p>Golden browning stage in deck oven</p>
+              <div class="oven-progress-bar"><div class="oven-progress-fill" style="width: 78%;"></div></div>
+            </div>
+          </div>
+          <div class="oven-card-footer">
+            <span>Temp: <strong>375°F</strong></span>
+            <span>Ready in: <strong>8 mins</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Palette & Brand Story Banner -->
+    <section class="brand-palette-banner">
+      <div class="container palette-container">
+        <div class="palette-strip-wrap">
+          <span class="palette-label">Mellow Color Signature:</span>
+          <div class="palette-stripes">
+            <div class="stripe color-espresso" title="#332119 Espresso Brown"><span>Espresso</span></div>
+            <div class="stripe color-teal" title="#4E777A Muted Teal"><span>Highland Teal</span></div>
+            <div class="stripe color-terracotta" title="#C1694D Terracotta Rust"><span>Hearth Rust</span></div>
+            <div class="stripe color-sage" title="#A5B3A7 Sage Green"><span>Sage Olive</span></div>
+            <div class="stripe color-gold" title="#DC9D4E Mellow Honey Gold"><span>Honey Gold</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Display & Menu Section -->
+    <section class="section menu-section" id="menu">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-subtitle">Fresh From Our Hearth</span>
+          <h2 class="section-title">Artisanal Bakery & Coffee Menu</h2>
+          <p class="section-desc">Hand-rolled viennoiserie, long-fermentation sourdoughs, and micro-batch coffees roasted with care.</p>
+        </div>
+
+        <!-- Menu Category Filter Tabs -->
+        <div class="menu-tabs-wrap">
+          <div class="menu-tabs" id="menuTabs">
+            <button class="tab-btn active" data-category="all">All Items</button>
+            <button class="tab-btn" data-category="pastries">🥐 Pastries & Viennoiserie</button>
+            <button class="tab-btn" data-category="breads">🥖 Artisan Sourdoughs</button>
+            <button class="tab-btn" data-category="coffee">☕ Specialty Coffee</button>
+            <button class="tab-btn" data-category="cakes">🍰 Tarts & Celebration Cakes</button>
+            <button class="tab-btn" data-category="giftbox">🎁 Wax-Sealed Boxes</button>
+          </div>
+        </div>
+
+        <!-- Search & Filter Bar -->
+        <div class="menu-filter-bar">
+          <div class="search-input-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" id="menuSearchInput" placeholder="Search croissants, sourdough, Ethiopia coffee..." aria-label="Search menu">
+            <button class="clear-search-btn" id="clearSearchBtn" aria-label="Clear search">&times;</button>
+          </div>
+          <div class="dietary-pills" id="dietaryFilters">
+            <button class="pill-btn" data-diet="bestseller">🔥 Bestseller</button>
+            <button class="pill-btn" data-diet="fresh">✨ Baked Today</button>
+            <button class="pill-btn" data-diet="vegan">🌱 Vegan</button>
+            <button class="pill-btn" data-diet="gf">🌾 Gluten-Friendly</button>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="products-grid" id="productsGrid">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Coffee Highlight Section -->
+    <section class="section coffee-highlight-section" id="coffee">
+      <div class="container coffee-grid">
+        <div class="coffee-image-col">
+          <div class="coffee-img-card">
+            <img src="assets/images/coffee_beans.jpg" alt="Mellow Ethiopia Yirgacheffe Coffee Beans Bag">
+            <div class="coffee-img-badge">
+              <img src="assets/brand/logo.jpg" alt="Mellow Logo" class="mini-logo-stamp">
+              <span>Direct Trade Single Origin</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="coffee-info-col">
+          <span class="section-subtitle">100% Natural Heirloom Coffee</span>
+          <h2 class="section-title">Ethiopia Yirgacheffe Medium Roast</h2>
+          <p class="coffee-tasting-notes">
+            <strong>Tasting Notes:</strong> Yellow Plum • Floral Blossom • Honey Crisp • Cocoa Finish
+          </p>
+          <p class="coffee-desc">
+            Sourced directly from high-altitude smallholder farmers in Yirgacheffe, Ethiopia. Grown in rich volcanic soil and sun-dried on African raised beds to preserve intricate floral notes and naturally sweet fruitiness.
+          </p>
+          
+          <div class="coffee-specs-grid">
+            <div class="spec-card">
+              <span class="spec-label">Roast Level</span>
+              <span class="spec-val">Medium Roast</span>
+            </div>
+            <div class="spec-card">
+              <span class="spec-label">Altitude</span>
+              <span class="spec-val">1,900 - 2,200m</span>
+            </div>
+            <div class="spec-card">
+              <span class="spec-label">Process</span>
+              <span class="spec-val">Natural Sun-Dried</span>
+            </div>
+            <div class="spec-card">
+              <span class="spec-label">Net Weight</span>
+              <span class="spec-val">500g / 17.6 oz</span>
+            </div>
+          </div>
+
+          <div class="coffee-buy-row">
+            <div class="coffee-price-wrap">
+              <span class="coffee-price">$24.00</span>
+              <span class="coffee-unit">/ 500g Bag</span>
+            </div>
+            <button class="btn btn-primary add-coffee-btn" onclick="addSingleItemToCart(6)">
+              <span>☕</span> Add to Bag
+            </button>
+            <button class="btn btn-outline" onclick="openSimulatorWithItem(6)">
+              Simulate Fresh Roast Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Order Simulator Section -->
+    <section class="section simulator-section" id="simulator">
+      <div class="container">
+        <div class="simulator-wrapper">
+          
+          <div class="simulator-intro text-center">
+            <div class="sim-badge">✨ Interactive Bakery Order Simulator</div>
+            <h2 class="sim-title">Craft Your Mellow Order & Watch It Bake Live</h2>
+            <p class="sim-subtitle">
+              Select your artisanal delights, choose your custom wax seal ribbon, and follow real-time live baking & packaging simulation stages.
+            </p>
+          </div>
+
+          <div class="simulator-box-grid">
+            
+            <!-- Step 1: Simulator Configuration Panel -->
+            <div class="sim-card sim-config-card">
+              <div class="sim-card-header">
+                <span class="step-num">1</span>
+                <h3>Customize Your Mellow Gift Box</h3>
+              </div>
+              
+              <form id="simOrderForm" onsubmit="event.preventDefault();">
+                <!-- Select Box Type -->
+                <div class="sim-form-group">
+                  <label class="sim-label">Select Box Bundle / Theme</label>
+                  <div class="sim-box-options">
+                    <label class="box-opt-card active">
+                      <input type="radio" name="simBoxType" value="morning" checked>
+                      <div class="box-opt-content">
+                        <span class="box-opt-icon">🌅</span>
+                        <div class="box-opt-text">
+                          <strong>Morning Sunshine Box</strong>
+                          <small>2 Croissants + Ethiopia Coffee Bag + Sourdough</small>
+                        </div>
+                        <span class="box-opt-price">$38.00</span>
+                      </div>
+                    </label>
+
+                    <label class="box-opt-card">
+                      <input type="radio" name="simBoxType" value="tasting">
+                      <div class="box-opt-content">
+                        <span class="box-opt-icon">🎁</span>
+                        <div class="box-opt-text">
+                          <strong>Grand Pastry & Tart Box</strong>
+                          <small>4 Viennoiserie + Wild Berry Tart + Chocolate Babka</small>
+                        </div>
+                        <span class="box-opt-price">$46.00</span>
+                      </div>
+                    </label>
+
+                    <label class="box-opt-card">
+                      <input type="radio" name="simBoxType" value="custom">
+                      <div class="box-opt-content">
+                        <span class="box-opt-icon">🛠️</span>
+                        <div class="box-opt-text">
+                          <strong>Custom Mellow Box</strong>
+                          <small>Uses current items selected in your cart</small>
+                        </div>
+                        <span class="box-opt-price" id="simCustomPrice">$0.00</span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Custom Wax Seal Accent -->
+                <div class="sim-form-group">
+                  <label class="sim-label">Select Signature Wax Seal Stamp</label>
+                  <div class="wax-options-grid">
+                    <label class="wax-opt active">
+                      <input type="radio" name="simWaxColor" value="terracotta" checked>
+                      <span class="wax-swatch color-terracotta-bg"></span>
+                      <span class="wax-name">Hearth Terracotta</span>
+                    </label>
+                    <label class="wax-opt">
+                      <input type="radio" name="simWaxColor" value="gold">
+                      <span class="wax-swatch color-gold-bg"></span>
+                      <span class="wax-name">Mellow Honey Gold</span>
+                    </label>
+                    <label class="wax-opt">
+                      <input type="radio" name="simWaxColor" value="espresso">
+                      <span class="wax-swatch color-espresso-bg"></span>
+                      <span class="wax-name">Dark Espresso</span>
+                    </label>
+                    <label class="wax-opt">
+                      <input type="radio" name="simWaxColor" value="teal">
+                      <span class="wax-swatch color-teal-bg"></span>
+                      <span class="wax-name">Highland Teal</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Personalized Note -->
+                <div class="sim-form-group">
+                  <label for="simMessage" class="sim-label">Gift Card Handwritten Message (Optional)</label>
+                  <input type="text" id="simMessage" placeholder="e.g., Happy Birthday Laxmi! Enjoy fresh pastries from Mellow." class="sim-input">
+                </div>
+
+                <!-- Delivery Speed -->
+                <div class="sim-form-group">
+                  <label class="sim-label">Fulfillment Preference</label>
+                  <div class="sim-radio-group">
+                    <label class="radio-pill">
+                      <input type="radio" name="simFulfillment" value="pickup" checked>
+                      <span>🚲 Express Counter Pickup (30 mins)</span>
+                    </label>
+                    <label class="radio-pill">
+                      <input type="radio" name="simFulfillment" value="delivery">
+                      <span>🚚 Mellow Kraft Courier Delivery</span>
+                    </label>
+                  </div>
+                </div>
+
+                <button type="button" class="btn btn-primary btn-block btn-lg" id="startSimBtn">
+                  <span>🔥</span> Start Live Order Baking Simulation
+                </button>
+              </form>
+            </div>
+
+            <!-- Step 2: Live Baking & Packaging Simulation Dashboard -->
+            <div class="sim-card sim-display-card">
+              <div class="sim-card-header">
+                <span class="step-num">2</span>
+                <h3>Live Kitchen Simulation Console</h3>
+                <span class="sim-status-pill" id="simStatusPill">Ready to Bake</span>
+              </div>
+
+              <div class="sim-live-console" id="simConsole">
+                
+                <!-- Initial Idle Screen -->
+                <div class="sim-idle-view" id="simIdleView">
+                  <div class="idle-illustration">
+                    <img src="assets/brand/logo.jpg" alt="Mellow Logo" class="idle-logo">
+                    <div class="idle-ring"></div>
+                  </div>
+                  <h4>Interactive Baking Simulator Idle</h4>
+                  <p>Click "Start Live Order Baking Simulation" on the left to watch your order progress through dough prep, baking oven, kraft paper hand-wrap, and wax sealing.</p>
+                </div>
+
+                <!-- Active Simulation Animation Screen -->
+                <div class="sim-active-view hidden" id="simActiveView">
+                  
+                  <!-- Phase Progress Indicators -->
+                  <div class="sim-timeline">
+                    <div class="timeline-step step-1 active" id="tStep1">
+                      <div class="step-dot">1</div>
+                      <span class="step-lbl">Knead</span>
+                    </div>
+                    <div class="timeline-line"><div class="timeline-line-fill" id="tLine1"></div></div>
+                    <div class="timeline-step step-2" id="tStep2">
+                      <div class="step-dot">2</div>
+                      <span class="step-lbl">Oven Bake</span>
+                    </div>
+                    <div class="timeline-line"><div class="timeline-line-fill" id="tLine2"></div></div>
+                    <div class="timeline-step step-3" id="tStep3">
+                      <div class="step-dot">3</div>
+                      <span class="step-lbl">Wax Seal</span>
+                    </div>
+                    <div class="timeline-line"><div class="timeline-line-fill" id="tLine3"></div></div>
+                    <div class="timeline-step step-4" id="tStep4">
+                      <div class="step-dot">4</div>
+                      <span class="step-lbl">Ready</span>
+                    </div>
+                  </div>
+
+                  <!-- Live Stage Animation Window -->
+                  <div class="stage-display-window" id="stageDisplayWindow">
+                    <div class="stage-badge" id="stageBadgeText">Stage 1: Kneading & Shaping</div>
+                    
+                    <div class="stage-visual-container">
+                      <!-- Stage 1 Visual: Kneading -->
+                      <div class="stage-visual stage-1-visual active" id="visualStage1">
+                        <div class="anim-dough-wrap">
+                          <span class="anim-emoji">🥣</span>
+                          <div class="dough-knead-anim"></div>
+                        </div>
+                        <div class="stage-metrics">
+                          <span>Proofing Temp: <strong>74°F</strong></span>
+                          <span>Humidity: <strong>82%</strong></span>
+                        </div>
+                      </div>
+
+                      <!-- Stage 2 Visual: Oven Bake -->
+                      <div class="stage-visual stage-2-visual hidden" id="visualStage2">
+                        <div class="anim-oven-wrap">
+                          <span class="anim-emoji">🔥</span>
+                          <div class="oven-glow-anim"></div>
+                        </div>
+                        <div class="stage-metrics">
+                          <span>Oven Temp: <strong class="temp-fire">375°F</strong></span>
+                          <span>Bake Browning: <strong id="bakePercentText">45%</strong></span>
+                        </div>
+                      </div>
+
+                      <!-- Stage 3 Visual: Wax Seal Stamping -->
+                      <div class="stage-visual stage-3-visual hidden" id="visualStage3">
+                        <div class="anim-seal-wrap">
+                          <div class="wax-stamp-press" id="waxStampPress">
+                            <img src="assets/brand/logo.jpg" alt="Mellow Wax Stamp" class="wax-stamp-logo">
+                          </div>
+                          <div class="wax-pool" id="waxPool"></div>
+                        </div>
+                        <div class="stage-metrics">
+                          <span>Paper: <strong>Natural Kraft</strong></span>
+                          <span>Wax Seal: <strong id="waxColorNameDisplay">Hearth Terracotta</strong></span>
+                        </div>
+                      </div>
+
+                      <!-- Stage 4 Visual: Dispatch & Receipt -->
+                      <div class="stage-visual stage-4-visual hidden" id="visualStage4">
+                        <div class="anim-ready-wrap">
+                          <span class="anim-emoji">✨</span>
+                          <div class="ready-check">✔</div>
+                        </div>
+                        <div class="stage-metrics">
+                          <span>Status: <strong>Freshly Sealed & Ready!</strong></span>
+                          <span>Tracking: <strong id="simTrackingId">#MLW-84920</strong></span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="stage-status-desc" id="stageStatusDesc">
+                      Master baker kneading organic sourdough dough and resting butter layers...
+                    </div>
+                  </div>
+
+                  <!-- Live Progress Bar & Timer -->
+                  <div class="sim-timer-wrap">
+                    <div class="sim-timer-bar">
+                      <div class="sim-timer-fill" id="simTimerFill" style="width: 0%;"></div>
+                    </div>
+                    <div class="sim-timer-info">
+                      <span id="simPhaseLabel">Phase 1 of 4</span>
+                      <span id="simTimerText">00:12 remaining</span>
+                    </div>
+                  </div>
+
+                  <!-- Action Buttons after completion -->
+                  <div class="sim-complete-actions hidden" id="simCompleteActions">
+                    <button class="btn btn-primary" id="viewReceiptBtn">
+                      🧾 View Printable Receipt & Ticket
+                    </button>
+                    <button class="btn btn-outline" id="resetSimBtn">
+                      🔄 Run Another Simulation
+                    </button>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Craft & Packaging Showcase -->
+    <section class="section craft-section" id="craft">
+      <div class="container">
+        <div class="craft-grid">
+          <div class="craft-content">
+            <span class="section-subtitle">Artisan Packaging & Heritage</span>
+            <h2 class="section-title">The Mellow Wax Seal Guarantee</h2>
+            <p class="craft-text">
+              Every parcel leaving Mellow is carefully hand-wrapped in unbleached, eco-friendly kraft paper and sealed with a hot wax stamp pressed with our official insignia. This seals in fresh oven warmth and preserves delicate coffee aromatics.
+            </p>
+
+            <div class="craft-features">
+              <div class="craft-feature-item">
+                <div class="feature-icon">🕯️</div>
+                <div class="feature-text">
+                  <h4>Hand-Stamped Hot Wax Seal</h4>
+                  <p>Our mark of authenticity and artisanal commitment.</p>
+                </div>
+              </div>
+
+              <div class="craft-feature-item">
+                <div class="feature-icon">📦</div>
+                <div class="feature-text">
+                  <h4>100% Recyclable Kraft Paper</h4>
+                  <p>Sustainably produced packaging that keeps baked goods crisp.</p>
+                </div>
+              </div>
+
+              <div class="craft-feature-item">
+                <div class="feature-icon">🌿</div>
+                <div class="feature-text">
+                  <h4>Aroma-Lock Coffee Valve</h4>
+                  <p>Preserves single-origin Ethiopia Yirgacheffe coffee bloom for weeks.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="craft-visuals">
+            <div class="craft-img-card main-craft-img">
+              <img src="assets/images/wax_package.jpg" alt="Mellow Wax Sealed Gift Box">
+            </div>
+            <div class="craft-overlay-card">
+              <img src="assets/brand/logo.jpg" alt="Mellow Official Brand Logo" class="craft-logo-badge">
+              <div class="craft-badge-text">
+                <strong>Authentic Mellow Packaging</strong>
+                <small>As shown in brand guidelines</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="section reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-subtitle">Loved By Coffee & Bakery Enthusiasts</span>
+          <h2 class="section-title">Words From Our Mellow Community</h2>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">"The Almond Croissants are unbelievably flaky! And receiving the kraft package with the authentic Mellow wax seal felt like opening a gourmet gift."</p>
+            <div class="review-author">
+              <div class="author-avatar color-terracotta-bg">EK</div>
+              <div class="author-info">
+                <strong>Emily K.</strong>
+                <small>Verified Guest • Ordering regular</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card highlight-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">"The Ethiopia Yirgacheffe medium roast is hands down the best pour-over coffee in town. Distinct floral notes with zero bitterness!"</p>
+            <div class="review-author">
+              <div class="author-avatar color-gold-bg">MR</div>
+              <div class="author-info">
+                <strong>Marcus R.</strong>
+                <small>Coffee Connoisseur</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">"Used the online Order Simulator to customize a birthday box for my family. The live baking updates were so cool to follow!"</p>
+            <div class="review-author">
+              <div class="author-avatar color-teal-bg">SL</div>
+              <div class="author-info">
+                <strong>Sophia L.</strong>
+                <small>Verified Customer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Store Location & Visit Section -->
+    <section class="section visit-section" id="visit">
+      <div class="container">
+        <div class="visit-card-wrap">
+          <div class="visit-info">
+            <span class="section-subtitle">Visit Our Bakehouse & Cafe</span>
+            <h2 class="section-title">Come Smelling The Fresh Oven Warmth</h2>
+            
+            <div class="visit-details">
+              <div class="visit-detail-item">
+                <span class="visit-icon">📍</span>
+                <div>
+                  <strong>Location Address</strong>
+                  <p>45 Mellow Lane, Artisan Quarter, NY 10012</p>
+                </div>
+              </div>
+
+              <div class="visit-detail-item">
+                <span class="visit-icon">⏰</span>
+                <div>
+                  <strong>Bakehouse Hours</strong>
+                  <p>Mon - Fri: 7:00 AM – 7:00 PM<br>Sat - Sun: 8:00 AM – 8:00 PM</p>
+                </div>
+              </div>
+
+              <div class="visit-detail-item">
+                <span class="visit-icon">📞</span>
+                <div>
+                  <strong>Phone & Orders</strong>
+                  <p>+1 (555) 482-6355 • hello@mellowbakery.com</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="visit-actions">
+              <a href="#simulator" class="btn btn-primary">Place Order in Simulator</a>
+              <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-outline">Get Directions</a>
+            </div>
+          </div>
+
+          <div class="visit-form-col">
+            <h3>Special Catering & Custom Cake Inquiry</h3>
+            <p>Planning a special event or custom wedding cake? Send us a note below:</p>
+            <form id="contactForm" onsubmit="handleContactSubmit(event)">
+              <div class="form-row">
+                <input type="text" placeholder="Your Name" required class="sim-input">
+                <input type="email" placeholder="Your Email" required class="sim-input">
+              </div>
+              <input type="text" placeholder="Event Date / Occasion" class="sim-input">
+              <textarea placeholder="Tell us about your catering needs..." rows="3" required class="sim-input"></textarea>
+              <button type="submit" class="btn btn-primary btn-block">Send Catering Inquiry</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/brand/logo.jpg" alt="Mellow Logo" class="footer-logo-img">
+        <p>Warmth in Every Bite, Art in Every Roast. Mellow is your neighbourhood artisanal bakehouse and coffee roastery.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="Pinterest">📌</a>
+        </div>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#menu">Viennoiserie & Breads</a></li>
+          <li><a href="#coffee">Ethiopia Yirgacheffe Beans</a></li>
+          <li><a href="#simulator">Order Simulator</a></li>
+          <li><a href="#craft">Wax Seal Guarantee</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Hours & Visit</h4>
+        <ul>
+          <li>Mon-Fri: 7am - 7pm</li>
+          <li>Sat-Sun: 8am - 8pm</li>
+          <li>Artisan Quarter, NY</li>
+          <li>+1 (555) 482-6355</li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>Stay Mellow</h4>
+        <p>Subscribe for early access to micro-lot coffee releases and fresh weekend baking alerts.</p>
+        <form id="newsletterForm" onsubmit="handleNewsletterSubmit(event)">
+          <div class="newsletter-input-group">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-primary">Join</button>
+          </div>
+        </form>
+        <small class="newsletter-note">🎁 Get 10% off your first simulator order code: <strong>MELLOW10</strong></small>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 Mellow Bakery & Specialty Coffee Roastery. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Out Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Mellow Cart (<span id="cartItemCount">0</span>)</h3>
+      <button class="close-cart-btn" onclick="closeCart()" aria-label="Close cart">&times;</button>
+    </div>
+
+    <div class="cart-free-shipping-bar">
+      <div class="free-shipping-text" id="freeShippingText">Add $35.00 for FREE Express Delivery!</div>
+      <div class="free-shipping-progress"><div class="free-shipping-fill" id="freeShippingFill" style="width: 0%;"></div></div>
+    </div>
+
+    <div class="cart-items-body" id="cartItemsContainer">
+      <!-- Cart items rendered by app.js -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="promo-input-row">
+        <input type="text" id="promoCodeInput" placeholder="Promo code (try MELLOW10)" class="sim-input">
+        <button class="btn btn-outline btn-sm" onclick="applyPromoCode()">Apply</button>
+      </div>
+      <div class="promo-discount-badge hidden" id="promoBadge">
+        <span>Discount (MELLOW10 - 10%)</span>
+        <span id="promoDiscountAmount">-$0.00</span>
+      </div>
+
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">$0.00</strong>
+      </div>
+      <div class="cart-subtotal-row">
+        <span>Estimated Delivery</span>
+        <strong id="cartDeliveryFee">$4.50</strong>
+      </div>
+      <div class="cart-total-row">
+        <span>Total</span>
+        <strong id="cartGrandTotal">$4.50</strong>
+      </div>
+
+      <div class="cart-checkout-actions">
+        <button class="btn btn-primary btn-block btn-lg" onclick="checkoutToSimulator()">
+          <span>✨</span> Proceed to Order Simulator
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Quick View Modal -->
+  <div class="modal-overlay hidden" id="quickViewModal" onclick="closeQuickView(event)">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeQuickViewDirect()">&times;</button>
+      <div class="modal-body" id="quickViewContent">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Printable Receipt Modal (Post Simulator) -->
+  <div class="modal-overlay hidden" id="receiptModal" onclick="closeReceiptModal(event)">
+    <div class="modal-card receipt-modal-card" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeReceiptModalDirect()">&times;</button>
+      <div class="receipt-paper" id="receiptPaper">
+        <div class="receipt-header text-center">
+          <img src="assets/brand/logo.jpg" alt="Mellow Logo" class="receipt-logo">
+          <h2>MELLOW BAKEHOUSE</h2>
+          <p>45 Mellow Lane, NY 10012</p>
+          <p>Order Receipt & Kitchen Ticket</p>
+          <div class="receipt-divider">--------------------------------</div>
+        </div>
+
+        <div class="receipt-meta">
+          <div>Ticket #: <strong id="receiptId">#MLW-84920</strong></div>
+          <div>Date: <span id="receiptDate">2026-09-19</span></div>
+          <div>Fulfillment: <span id="receiptFulfillment">Counter Pickup</span></div>
+          <div>Wax Seal: <span id="receiptWaxSeal">Hearth Terracotta</span></div>
+        </div>
+
+        <div class="receipt-divider">--------------------------------</div>
+
+        <div class="receipt-items" id="receiptItemsList">
+          <!-- Populated by app.js -->
+        </div>
+
+        <div class="receipt-divider">--------------------------------</div>
+
+        <div class="receipt-totals">
+          <div class="rc-row"><span>Subtotal:</span><span id="receiptSubtotal">$0.00</span></div>
+          <div class="rc-row"><span>Wax Package Seal:</span><span>INCLUDED ($0.00)</span></div>
+          <div class="rc-row"><span>Discount:</span><span id="receiptDiscount">-$0.00</span></div>
+          <div class="rc-row rc-total"><span>TOTAL PAID:</span><strong id="receiptTotal">$0.00</strong></div>
+        </div>
+
+        <div class="receipt-divider">--------------------------------</div>
+
+        <div class="receipt-message-box" id="receiptMessageBox">
+          <small>Personal Note:</small>
+          <p id="receiptMsgText">"Enjoy fresh oven-baked warmth from Mellow!"</p>
+        </div>
+
+        <div class="receipt-barcode text-center">
+          <div class="barcode-lines">||||| | |||||| || | |||| |||||</div>
+          <p>Thank you for choosing Mellow Bakery!</p>
+        </div>
+      </div>
+      
+      <div class="receipt-modal-actions text-center">
+        <button class="btn btn-primary" onclick="window.print()">🖨️ Print Ticket / Save PDF</button>
+        <button class="btn btn-outline" onclick="closeReceiptModalDirect()">Close Ticket</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+</html>
