@@ -19,6 +19,30 @@ Built using the official color system extracted from Mellow's brand guidelines:
 
 ---
 
+## 🚀 Deploying to Netlify
+
+This project is 100% pre-configured and deployment-ready for **Netlify**.
+
+### Method 1: Automatic Deployment via GitHub (Recommended)
+1. Log in to [Netlify](https://app.netlify.com/).
+2. Click **Add new site** -> **Import an existing project**.
+3. Choose **GitHub** and select your repository: `Devesh223/Mellow`.
+4. Netlify will automatically detect `netlify.toml` with:
+   - **Publish directory**: `.` (Root)
+   - **Build command**: *(Leave empty)*
+5. Click **Deploy Mellow**! Your site will be live instantly with global SSL and CDN caching.
+
+### Method 2: Netlify CLI
+```bash
+# Install Netlify CLI
+npm install -g netlify-cli
+
+# Deploy directly from terminal
+netlify deploy --prod
+```
+
+---
+
 ## ✨ Features
 
 - 🥐 **Artisanal Product Display**: Filterable menu showcasing Viennoiserie, Sourdoughs, Ethiopia Yirgacheffe single-origin coffee beans, and Celebration Tarts.
@@ -56,6 +80,8 @@ Mellow/
 ├── index.html                 # Semantic HTML5 Layout
 ├── styles.css                 # CSS Design System & Palette Variables
 ├── app.js                     # Interactive Logic & Simulator State Engine
+├── netlify.toml               # Netlify Deployment Configuration
+├── _redirects                 # SPA Clean Routing Rules
 ├── .gitignore
 └── README.md
 ```
